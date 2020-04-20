@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,600,700,800|Roboto:400,700&display=swap");
+* {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+a {
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  background-color: #f5f5f5;
+  font: normal 16px Roboto, sans-serif;
+}
+::-webkit-scrollbar {
+  width: 4px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #2e2e2e;
+}
+
