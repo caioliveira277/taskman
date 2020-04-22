@@ -3,8 +3,8 @@ import styled from "styled-components";
 const Switch = styled.label`
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 50px;
+  height: 24px;
   input {
     opacity: 0;
     width: 0;
@@ -18,20 +18,20 @@ const Switch = styled.label`
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    transition: 0.4s;
+    transition: 0.3s;
   }
   span:before {
     content: "";
     position: absolute;
-    height: 26px;
-    width: 26px;
+    height: 17px;
+    width: 17px;
     left: 4px;
     bottom: 4px;
     background-color: #ffffff;
     transition: 0.4s;
   }
   input:checked + span {
-    background: ${(props) => props.color || "var(--color-theme-orange)"};
+    background: ${(props) => props.color || "#dddddd"};
   }
   input:focus + span {
     box-shadow: 0 0 1px #2196f3;
@@ -49,7 +49,8 @@ const Switch = styled.label`
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(70%, -50%);
+    transform: translate(60%, -50%);
+    cursor: pointer;
   }
 `;
 
