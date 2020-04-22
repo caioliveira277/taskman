@@ -4,22 +4,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --color-theme-orange: #feb954;
-  --color-theme-blue: #4ba1f4;
-  --color-theme-blue-op: #4ba1f4aa;
+  --color-orange: #feb954;
+  --color-orange-2: #d89a3d;
+  --color-blue: #4ba1f4;
+  --color-blue-2: #a0ccf8;
 }
 a {
   text-decoration: none;
-  color: var(--color-theme-blue);
+  color: var(--color-blue);
   transition: color 400ms;
 }
 a:hover {
-  color: var(--color-theme-blue-op);
+  color: var(--color-blue-2);
 }
 ul {
   list-style: none;
 }
-em {
+em, i {
   font-style: normal;
 }
 body {
