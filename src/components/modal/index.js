@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { ModalContainer, ModalContent } from "./styles";
 import ButtonTheme from "../buttons";
+import Lottie from "lottie-react-web";
+import animation from "../animations/lottie/worked.json";
 
 export default function Modal() {
   const ModalDispatch = useDispatch();
@@ -28,9 +30,10 @@ export default function Modal() {
         </div>
         <div>
           <figure>
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/images/forgot-key.svg`}
-              alt="Forgot key"
+            <Lottie
+              options={{
+                animationData: animation,
+              }}
             />
           </figure>
           <div>
