@@ -14,6 +14,7 @@ const FormLogin = styled.form`
   animation: ${(props) => (props.mode === "login" ? FadeForm : FadeFormReset)}
     900ms forwards;
   transform: translateX(-100%);
+  will-change: transform, opacity;
   em,
   div,
   span {

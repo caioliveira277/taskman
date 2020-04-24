@@ -32,6 +32,7 @@ export const Figure = styled.figure`
   animation: ${(props) =>
       props.mode === "Login" ? LoginFade : LoginFadeReverse}
     800ms forwards cubic-bezier(0.99, -0.01, 0.21, 1);
+  will-change: transform, opacity;
   img {
     width: 100%;
     height: 100%;

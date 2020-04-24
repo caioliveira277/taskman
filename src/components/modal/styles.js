@@ -24,7 +24,8 @@ export const ModalContent = styled.form`
   opacity: 1;
   z-index: 4;
   padding: 1rem;
-  animation: ${FadeModal} 400ms cubic-bezier(0, -0.04, 0.15, 0.66);
+  animation: ${FadeModal} 300ms cubic-bezier(0.7, 0, 0.3, 1);
+  will-change: transform, top, opacity;
   div {
     hr {
       border: 1px solid #f6f6f6;
@@ -67,7 +68,7 @@ export const ModalContent = styled.form`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      p:nth-child(2){
+      p:nth-child(2) {
         margin-top: 1rem;
       }
       p {
