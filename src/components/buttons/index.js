@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import Button from "./styles";
 
 export default function ButtonTheme({ type, text }) {
-  return <Button type={type}>{text}</Button>;
+  const ButtonFn = () => {
+    return <Button type={type}>{text}</Button>;
+  };
+  return ButtonFn();
 }
 ButtonTheme.prototype = {
   text: PropTypes.string.isRequired,
