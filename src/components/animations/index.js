@@ -20,35 +20,61 @@ export const LoginFadeReverse = keyframes`
 `;
 
 export const FadeForm = keyframes`
-  0%{
+  0% {
     opacity: 1;
   }
-  50%, 100%{
+  50%, 100% {
     opacity: 0;
   }
-  100%{
+  100% { 
     opacity: 1;
   }
 `;
 export const FadeFormReset = keyframes`
-  0%{
+  0% {
     opacity: 1;
   }
-  50%, 100%{
+  50%, 100% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 2;
   }
 `;
 
 export const FadeModal = keyframes`
-  from{
+  from {
     top: -10%;
     opacity: 0;
   }
-  to{
+  to {
     top: 25%;
     opacity: 1;
+  }
+`;
+
+export const TransitionAnim = keyframes`
+  0% {
+    transform: translate3d(0, 100%, 0);
+    width: 10vw;
+  }
+  25%{
+    transform: translate3d(0, 0, 0);
+  }
+  50%, 100% {
+    width: 10vw;
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    width: 100vw;
+    transform: translate3d(0, 0, 0);
+  }
+  `;
+export const TransitionAnimReverse = keyframes`
+  50% {
+    transform: translate3d(90%, -100%, 0);
+  }
+  100% {
+    transform: translate3d(90%, 100%, 0);
   }
 `;
