@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { MdVpnKey, MdPerson } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import Form from "./styles";
-import SwitchInput from "../../switch";
+import { Input, Switch } from "../../inputs";
 import ButtonTheme from "../../buttons";
-import Transition from "../../transition";
+import TransitionPage from "../../transition";
 
 export default function LoginForm() {
   const FormDispatch = useDispatch();
@@ -23,7 +23,7 @@ export default function LoginForm() {
 
   const HandleSubmit = (event) => {
     event.preventDefault();
-    setTrantision(<Transition redirect="/profile" />);
+    setTrantision(<TransitionPage redirect="/tasks" text="Olá." />);
   };
 
   return (
@@ -38,18 +38,19 @@ export default function LoginForm() {
         <h1>Log in</h1>
         <div>
           <MdPerson />
-          <input
+          <Input
             type="text"
             autoComplete="username"
             placeholder="Nome de usuário"
+            width="70%"
           />
         </div>
         <div>
           <MdVpnKey />
-          <input type="password" placeholder="Senha" />
+          <Input type="password" placeholder="Senha" width="70%" />
         </div>
         <span>
-          <SwitchInput text="Lembrar?" color="var(--color-orange)" />
+          <Switch text="Lembrar?" color="var(--color-orange)" />
           <a href="/" onClick={ToggleModal}>
             Esqueceu sua senha?
           </a>
