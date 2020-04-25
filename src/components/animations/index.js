@@ -54,27 +54,29 @@ export const FadeModal = keyframes`
 `;
 
 export const TransitionAnim = keyframes`
-  0% {
-    transform: translate3d(0, 100%, 0);
-    width: 10vw;
+  from {
+    transform: translate3d(-100%, 0, 0);
   }
-  25%{
-    transform: translate3d(0, 0, 0);
-  }
-  50%, 100% {
-    width: 10vw;
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    width: 100vw;
+  to {
     transform: translate3d(0, 0, 0);
   }
   `;
 export const TransitionAnimReverse = keyframes`
-  50% {
-    transform: translate3d(90%, -100%, 0);
+  from {
+    transform: translate3d(100%, 0, 0);
   }
-  100% {
-    transform: translate3d(90%, 100%, 0);
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+`;
+export const FadeDropdown = keyframes`
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+`;
+export const FadeTextTransition = keyframes`
+  to {
+    opacity: 1;
   }
 `;
