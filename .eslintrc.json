@@ -23,14 +23,16 @@
   },
   "plugins": ["react", "jsx-a11y", "import", "prettier"],
   "rules": {
-    "rules": {
-      "jsx-a11y/label-has-associated-control": [ 2, {
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
         "labelComponents": ["CustomLabel"],
         "labelAttributes": ["inputLabel"],
         "controlComponents": ["CustomInput"],
         "assert": "both",
-        "depth": 3,
-      }],
+        "depth": 3
+      }
+    ],
     "prettier/prettier": "error",
     "react/jsx-filename-extension": [
       "error",
