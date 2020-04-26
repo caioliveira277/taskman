@@ -1,16 +1,6 @@
 import styled from "styled-components";
 import { FadeModal } from "../animations";
 
-export const ModalContainer = styled.section`
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background: #00000055;
-  top: 0;
-  left: 0;
-  z-index: 3;
-`;
-
 export const ModalContent = styled.form`
   position: absolute;
   width: 90%;
@@ -24,7 +14,7 @@ export const ModalContent = styled.form`
   opacity: 1;
   z-index: 4;
   padding: 1rem;
-  animation: ${FadeModal} 300ms cubic-bezier(0.7, 0, 0.3, 1);
+  animation: ${FadeModal} 400ms ease;
   will-change: transform, top, opacity;
   div {
     hr {
@@ -73,16 +63,6 @@ export const ModalContent = styled.form`
       }
       p {
         font-size: 1.2rem;
-      }
-      input {
-        margin-top: 2rem;
-        border-radius: 0.5rem;
-        border: none;
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-        padding-left: 1rem;
-        font-size: 1rem;
-        width: 100%;
-        height: 45px;
       }
     }
   }

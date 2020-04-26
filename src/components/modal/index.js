@@ -1,8 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { ModalContainer, ModalContent } from "./styles";
+import Lottie from "react-lottie";
+import { ModalContent } from "./styles";
+import Container from "../container";
 import ButtonTheme from "../buttons";
-import Lottie from "lottie-react-web";
+import { Input } from "../inputs";
 import animation from "../animations/lottie/worked.json";
 
 export default function Modal() {
@@ -10,18 +12,17 @@ export default function Modal() {
 
   const ToggleModal = (event) => {
     event.preventDefault();
-    ModalDispatch({ type: "CLOSE" });
+    ModalDispatch({ type: "CLOSE_MODAL" });
   };
-
   return (
-    <ModalContainer>
+    <Container>
       <ModalContent>
         <div>
           <h2>Recuperação de senha:</h2>
           <i
             onClick={ToggleModal}
             tabIndex={0}
-            onKeyUp={() => {}}
+            onKeyPress={ToggleModal}
             role="button"
           >
             &times;
@@ -43,12 +44,12 @@ export default function Modal() {
               <b> email registrado</b>
               {" e te ajudaremos com isso! "}
             </p>
-            <input
+            <Input
               type="email"
               name="email"
-              id="forgotpass"
               required
               placeholder="Email"
+              margin="10px 0"
             />
           </div>
         </div>
@@ -57,6 +58,6 @@ export default function Modal() {
           <ButtonTheme type="submit" text="Enviar" />
         </div>
       </ModalContent>
-    </ModalContainer>
+    </Container>
   );
 }

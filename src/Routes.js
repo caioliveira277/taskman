@@ -10,29 +10,26 @@ import PropTypes from "prop-types";
 import Store from "./store";
 import Login from "./pages/login";
 import Profile from "./pages/profile";
+import Tasks from "./pages/tasks";
 
 const isAuthenticated = () => true;
 
 const PrivateRoute = ({ component: Component }) => {
-  const PrivateFn = () => {
-    return (
-      <Route
-        render={({ history, location, match }) => {
-          if (isAuthenticated())
-            return (
-              <Component history={history} location={location} match={match} />
-            );
+  return (
+    <Route
+      render={({ history, location, match }) => {
+        if (isAuthenticated())
+          return (
+            <Component history={history} location={location} match={match} />
+          );
 
-          return <Redirect to={{ pathname: "/", state: { from: location } }} />;
-        }}
-      />
-    );
-  };
-  return PrivateFn();
+        return <Redirect to={{ pathname: "/", state: { from: location } }} />;
+      }}
+    />
+  );
 };
-PrivateRoute.prototype = {
+PrivateRoute.propTypes = {
   component: PropTypes.func.isRequired,
-  location: PropTypes.string,
 };
 
 export default function Routes() {
@@ -41,6 +38,7 @@ export default function Routes() {
       <Router>
         <Switch>
           <Route exact path="/login" component={Login} />
+          <PrivateRoute exact path="/tasks" component={Tasks} />
           <PrivateRoute exact path="/profile" component={Profile} />
         </Switch>
       </Router>

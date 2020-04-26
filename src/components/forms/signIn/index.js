@@ -1,10 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import Form from "./styles";
 import ButtonTheme from "../../buttons";
+import { Input } from "../../inputs";
+import Form from "./styles";
 
 export default function LoginForm() {
   const formDispatch = useDispatch();
+
   const ChangeForm = (event) => {
     event.preventDefault();
     formDispatch({ type: "LOGIN" });
@@ -18,30 +20,46 @@ export default function LoginForm() {
         </a>
       </em>
       <h1>Sign in</h1>
-      <label htmlFor="username">
+      <label>
         Nome de usuário:
-        <input
+        <Input
           type="text"
           autoComplete="username"
           placeholder="Nome de usuário"
-          id="username"
+          width="70%"
+          margin="0 auto"
         />
       </label>
-      <label htmlFor="email">
+      <label>
         Email:
-        <input type="email" id="email" placeholder="O seu melhor email" />
+        <Input
+          type="email"
+          placeholder="O seu melhor email"
+          width="70%"
+          margin="0 auto"
+        />
       </label>
       <div>
-        <label htmlFor="password">
+        <label>
           Senha:
-          <input type="password" id="password" placeholder="Senha secreta" />
+          <Input
+            type="password"
+            placeholder="Senha secreta"
+            width="90%"
+            margin="0 auto"
+          />
         </label>
-        <label htmlFor="repeat-password">
+        <label>
           Repita sua senha:
-          <input type="password" id="repeat-password" placeholder="Senha" />
+          <Input
+            type="password"
+            placeholder="Senha"
+            width="90%"
+            margin="0 auto"
+          />
         </label>
       </div>
-      <ButtonTheme type="submit" text="Enviar"/>
+      <ButtonTheme type="submit" text="Enviar" />
     </Form>
   );
 }

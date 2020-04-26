@@ -2,28 +2,28 @@ import React, { useState } from "react";
 import { MdVpnKey, MdPerson } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import Form from "./styles";
-import SwitchInput from "../../switch";
+import { Input, Switch } from "../../inputs";
 import ButtonTheme from "../../buttons";
-import Transition from "../../transition";
+import TransitionPage from "../../transition";
 
 export default function LoginForm() {
   const FormDispatch = useDispatch();
   const ModalDispatch = useDispatch();
-  const [transition, setTrantision] = useState(null);
+  const [transition, setTrantision] = useState(false);
 
   const ChangeForm = (event) => {
     event.preventDefault();
-    FormDispatch({ type: "SIGNIN" });
+    FormDispatch({ type: "SIGN_IN" });
   };
 
   const ToggleModal = (event) => {
     event.preventDefault();
-    ModalDispatch({ type: "OPEN" });
+    ModalDispatch({ type: "OPEN_MODAL" });
   };
 
   const HandleSubmit = (event) => {
     event.preventDefault();
-    setTrantision(<Transition redirect="/profile" />);
+    setTrantision(true);
   };
 
   return (
@@ -38,25 +38,28 @@ export default function LoginForm() {
         <h1>Log in</h1>
         <div>
           <MdPerson />
-          <input
+          <Input
             type="text"
             autoComplete="username"
             placeholder="Nome de usuário"
+            width="70%"
           />
         </div>
         <div>
           <MdVpnKey />
-          <input type="password" placeholder="Senha" />
+          <Input type="password" placeholder="Senha" width="70%" />
         </div>
         <span>
-          <SwitchInput text="Lembrar?" color="var(--color-orange)" />
+          <Switch text="Lembrar?" color="var(--color-orange)" />
           <a href="/" onClick={ToggleModal}>
             Esqueceu sua senha?
           </a>
         </span>
         <ButtonTheme type="submit" text="Entrar" />
       </Form>
-      {transition}
+      {transition === true ? (
+        <TransitionPage redirect="/tasks" text="Tarefas" />
+      ) : null}
     </>
   );
 }

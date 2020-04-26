@@ -36,23 +36,6 @@ const FormLogin = styled.form`
     flex-direction: column;
     height: 80px;
     justify-content: space-between;
-    input {
-      margin: 0 auto;
-      border-radius: 0.5rem;
-      border: none;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-      padding-left: 1rem;
-      font-size: 1rem;
-      width: 70%;
-      height: 45px;
-    }
-  }
-  div {
-    label {
-      input {
-        width: 90%;
-      }
-    }
   }
 `;
 
