@@ -3,13 +3,16 @@ import styled from "styled-components";
 const Header = styled.header`
   background: #2e2e2e;
   width: 100vw;
+  height: 50px;
   box-shadow: 0px 3px 15px #00000065;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.3rem 1rem;
   color: #ffffff;
-  aside {
+  z-index: 3;
+  position: relative;
+  div:first-child {
     button {
       cursor: pointer;
       border: none;
@@ -53,31 +56,7 @@ const Header = styled.header`
       }
     }
   }
-  nav {
-    ul {
-      display: flex;
-      li {
-        cursor: pointer;
-        font: 600 2rem "Raleway", serif;
-        position: relative;
-        :first-child {
-          margin-right: 1rem;
-        }
-      }
-      li.active::after,
-      li:hover::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 3px;
-        border-radius: 1rem;
-        position: absolute;
-        bottom: -10px;
-        background: var(--color-orange);
-      }
-    }
-  }
-  div {
+  div:last-child {
     display: flex;
     align-items: center;
     position: relative;
@@ -93,6 +72,29 @@ const Header = styled.header`
     }
     i {
       margin-left: 0.5rem;
+    }
+    span {
+      div {
+        ul {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          li {
+            margin: 0.3rem;
+            a {
+              font: 500 1.2rem "Roboto", serif;
+              color: #2e2e2e;
+              :hover {
+                color: var(--color-blue);
+              }
+            }
+          }
+          hr {
+            border: 1px solid #f5f5f5;
+            margin: 0.6rem 0;
+          }
+        }
+      }
     }
   }
 `;

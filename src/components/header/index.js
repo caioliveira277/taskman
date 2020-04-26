@@ -1,49 +1,43 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import Aside from "./aside";
+import Nav from "./nav";
 import Dropdown from "../dropdown";
 import Header from "./styles";
 
 export default function HeaderComponent() {
-  const [dropdown, setDropdown] = useState(null);
-  const ToggleDropdown = (event) => {
-    event.stopPropagation();
-    if (dropdown === null) {
-      return setDropdown(<Dropdown />);
+  const [dropdown, setDropdown] = useState(false);
+  const toggleAside = useSelector((state) => state.Toggle.aside);
+  const dispatchAside = useDispatch();
+
+  const ToggleDropdown = () => {
+    if (dropdown === false) {
+      return setDropdown(true);
     }
-    return setDropdown(null);
+    return setDropdown(false);
   };
 
-  const ToggleActive = ({ target }) => {
-    if (target.tagName === "A") {
-      target.closest("ul").childNodes.forEach((li) => {
-        li.classList.remove("active");
-      });
-      return target.closest("li").classList.toggle("active");
+  const ToggleAside = () => {
+    if (toggleAside === "Open") {
+      return dispatchAside({ type: "CLOSE_ASIDE" });
     }
-    return target.classList.toggle("active");
+    return dispatchAside({ type: "OPEN_ASIDE" });
   };
 
   return (
-    <Header>
-      <aside>
-        <button type="button" onClick={ToggleActive}>
+    <Header mode={toggleAside === "Open" ? "focus" : null}>
+      <div>
+        <button
+          type="button"
+          className={toggleAside === "Open" ? "active" : ""}
+          onClick={ToggleAside}
+        >
           <span />
         </button>
-      </aside>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/tasks" onClick={ToggleActive}>
-              Link1
-            </Link>
-          </li>
-          <li>
-            <Link to="/tasks" onClick={ToggleActive}>
-              Link2
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        {toggleAside === "Open" ? <Aside /> : null}
+      </div>
+      <Nav />
       <div
         onClick={ToggleDropdown}
         onKeyPress={ToggleDropdown}
@@ -56,7 +50,24 @@ export default function HeaderComponent() {
         />
         <h2>User </h2>
         <i>&#9662;</i>
-        {dropdown}
+        {dropdown === true ? (
+          <Dropdown
+            image={`${process.env.PUBLIC_URL}/assets/images/background-dropdown.jpg`}
+          >
+            <ul>
+              <li>
+                <Link to="/profile">Perfil</Link>
+              </li>
+              <li>
+                <Link to="/profile">Ajustes</Link>
+              </li>
+              <hr />
+              <li>
+                <Link to="/profile">Sair</Link>
+              </li>
+            </ul>
+          </Dropdown>
+        ) : null}
       </div>
     </Header>
   );
