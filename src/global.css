@@ -8,6 +8,8 @@
   --color-orange-2: #d89a3d;
   --color-blue: #4ba1f4;
   --color-blue-2: #a0ccf8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 a {
   text-decoration: none;
