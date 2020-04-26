@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { createPortal } from "react-dom";
 import PropTypes from "prop-types";
 import Transition from "./styles";
 
@@ -22,11 +23,14 @@ export default function TransitionPage({ redirect, mode, text }) {
       History.push(redirect);
     }
   };
-
-  return (
-    <Transition mode={mode}>
+  const HandlerTransition = ({ target }) => {
+    if (mode === "reverse") target.remove();
+  };
+  return createPortal(
+    <Transition mode={mode} onAnimationEnd={HandlerTransition}>
       <h1 onAnimationEnd={HandlerAnimation}>{text}</h1>
-    </Transition>
+    </Transition>,
+    document.body
   );
 }
 

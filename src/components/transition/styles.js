@@ -5,9 +5,12 @@ import {
   FadeTextTransition,
 } from "../animations";
 
-const Transition = styled.section`
-  background: var(--color-blue);
+const Transition = styled.div`
+  z-index: 10;
+  top: 0;
+  left: 0;
   position: fixed;
+  background: var(--color-blue);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,9 +18,6 @@ const Transition = styled.section`
       props.mode === "reverse" ? TransitionAnimReverse : TransitionAnim}
     600ms ease ${(props) => props.mode} forwards;
   will-change: transform;
-  z-index: 5;
-  top: 0;
-  left: 0;
   height: 100vh;
   width: 100vw;
   ${(props) => (props.mode === "reverse" ? "width: 100vw;" : "")};
@@ -25,7 +25,8 @@ const Transition = styled.section`
     font: normal 3.5rem monospace;
     color: #ffffff;
     opacity: 0;
-    transform: translateY(50%);
+    position: absolute;
+    top: 30%;
     animation: ${FadeTextTransition} 800ms 700ms alternate;
   }
 `;
