@@ -30,7 +30,6 @@ const PrivateRoute = ({ component: Component }) => {
 };
 PrivateRoute.propTypes = {
   component: PropTypes.func.isRequired,
-  location: PropTypes.string.isRequired,
 };
 
 export default function Routes() {
