@@ -14,7 +14,7 @@ export const ModalContent = styled.form`
   opacity: 1;
   z-index: 4;
   padding: 1rem;
-  animation: ${FadeModal} 300ms cubic-bezier(0.7, 0, 0.3, 1);
+  animation: ${FadeModal} 400ms ease;
   will-change: transform, top, opacity;
   div {
     hr {
