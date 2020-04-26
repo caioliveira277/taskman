@@ -7,7 +7,7 @@ const Input = styled.input`
   padding-left: 1rem;
   font-size: 1rem;
   width: ${(props) => props.width};
-  height: 45px;
+  height: ${(props) => props.height};
   margin: ${(props) => props.margin};
 `;
 
