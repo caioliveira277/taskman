@@ -1,25 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import Span from "./styles";
 
-export default function Dropdown() {
+export default function Dropdown({ image, children }) {
   return (
-    <Span>
-      <div />
-      <div>
-        <ul>
-          <li>
-            <Link to="/profile">Perfil</Link>
-          </li>
-          <li>
-            <Link to="/profile">Ajustes</Link>
-          </li>
-          <hr />
-          <li>
-            <Link to="/profile">Sair</Link>
-          </li>
-        </ul>
-      </div>
+    <Span background={image}>
+      <figure />
+      <div>{children}</div>
     </Span>
   );
 }
+Dropdown.propTypes = {
+  image: PropTypes.string.isRequired,
+  // children: PropTypes.isRequired
+};
