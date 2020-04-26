@@ -9,21 +9,21 @@ import TransitionPage from "../../transition";
 export default function LoginForm() {
   const FormDispatch = useDispatch();
   const ModalDispatch = useDispatch();
-  const [transition, setTrantision] = useState(null);
+  const [transition, setTrantision] = useState(false);
 
   const ChangeForm = (event) => {
     event.preventDefault();
-    FormDispatch({ type: "SIGNIN" });
+    FormDispatch({ type: "SIGN_IN" });
   };
 
   const ToggleModal = (event) => {
     event.preventDefault();
-    ModalDispatch({ type: "OPEN" });
+    ModalDispatch({ type: "OPEN_MODAL" });
   };
 
   const HandleSubmit = (event) => {
     event.preventDefault();
-    setTrantision(<TransitionPage redirect="/tasks" text="Olá." />);
+    setTrantision(true);
   };
 
   return (
@@ -57,7 +57,9 @@ export default function LoginForm() {
         </span>
         <ButtonTheme type="submit" text="Entrar" />
       </Form>
-      {transition}
+      {transition === true ? (
+        <TransitionPage redirect="/tasks" text="Tarefas" />
+      ) : null}
     </>
   );
 }
