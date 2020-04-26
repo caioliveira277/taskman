@@ -8,15 +8,21 @@ import Container from "./styles";
  * @summary rendered directly in the 'body'
  *
  * @param   {String} [optional]    background = "#00000055"
- * @param   {String} [required]    zindex: z-index property css
+ * @param   {Number} [optional]    zindex: z-index property css
+ * @param   {Function} [optional]  onclick = () => ()
  * @return {JSX} JSX
  *
  * @example
  *   <Container background="tomato" zindex="3"> ... </Container>
  */
-export default function ContainerComponent({ background, zindex, children }) {
+export default function ContainerComponent({
+  background,
+  zindex,
+  children,
+  onClick,
+}) {
   return createPortal(
-    <Container background={background} zindex={zindex}>
+    <Container background={background} zindex={zindex} onClick={onClick}>
       {children}
     </Container>,
     document.body
@@ -24,9 +30,12 @@ export default function ContainerComponent({ background, zindex, children }) {
 }
 ContainerComponent.propTypes = {
   background: PropTypes.string,
-  zindex: PropTypes.number.isRequired,
-  children: PropTypes.object.isRequired,
+  zindex: PropTypes.number,
+  children: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  onClick: PropTypes.func,
 };
 ContainerComponent.defaultProps = {
   background: "#00000055",
+  zindex: 2,
+  onClick: () => null,
 };
