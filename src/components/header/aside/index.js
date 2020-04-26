@@ -51,7 +51,7 @@ export default function AsideComponent() {
               />
             </span>
           </Group>
-          <hr/>
+          <hr />
           <Group>
             <span>
               <h2>Título:</h2>
