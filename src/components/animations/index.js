@@ -75,8 +75,24 @@ export const FadeDropdown = keyframes`
     opacity: 0;
   }
 `;
+export const FadeDropPicker = keyframes`
+  0% {
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 0;
+  }
+`;
 export const FadeTextTransition = keyframes`
   to {
     opacity: 1;
+  }
+`;
+export const FadeAside = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 `;
