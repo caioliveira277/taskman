@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import ChangeForm from "./changeForm.reducer";
-import ToggleModal from "./toggleModal.reducer";
+import Toggle from "./toggle.reducer";
 
 export const reducers = combineReducers({
   ChangeForm,
-  ToggleModal,
+  Toggle,
 });
