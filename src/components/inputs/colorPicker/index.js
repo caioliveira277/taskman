@@ -46,7 +46,11 @@ export default function ColorPicker({ onChange, name, colorDefault }) {
       <button type="button" onClick={HandlerClick} />
       {picker.display === true ? (
         <DropPicker color={picker.color}>
-          <ChromePicker color={picker.color} onChangeComplete={HandlerChange} />
+          <ChromePicker
+            color={picker.color}
+            onChange={HandlerChange}
+            disableAlpha
+          />
         </DropPicker>
       ) : null}
     </Span>

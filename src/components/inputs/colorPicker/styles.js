@@ -11,6 +11,7 @@ export const Span = styled.span`
     border: none;
     cursor: pointer;
     background: ${(props) => props.color};
+    box-shadow: 0px 5px 10px #00000065;
   }
 `;
 
