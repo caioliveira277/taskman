@@ -1,72 +1,44 @@
 import styled from "styled-components";
 import { FadeModal } from "../animations";
 
-export const ModalContent = styled.form`
-  position: absolute;
+export const ModalContent = styled.div`
+  margin: 1rem;
   width: 90%;
+  height: max-content;
   max-width: 600px;
-  height: auto;
   background: #ffffff;
   border-radius: 0.5rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  top: 25%;
   opacity: 1;
-  z-index: 4;
-  padding: 1rem;
-  animation: ${FadeModal} 400ms ease;
+  z-index: 100;
+  animation: ${FadeModal} 350ms ease forwards;
   will-change: transform, top, opacity;
-  div {
-    hr {
-      border: 1px solid #f6f6f6;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
+  hr {
+    border: 1px solid #f6f6f6;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
-  div:nth-child(1) {
-    position: relative;
-    h2 {
-      color: #c1c1c1;
-      font-style: italic;
-      font-size: 1rem;
-      font-weight: normal;
-    }
-    i {
-      position: absolute;
-      font-size: 2.5rem;
-      top: -15px;
-      right: 0;
-      color: var(--color-orange);
-      cursor: pointer;
-      transition: all 300ms;
-      :hover {
-        color: var(--color-orange-2);
-      }
-    }
-  }
-  div:nth-child(2) {
-    display: flex;
-    justify-content: space-around;
-    figure {
-      width: 40%;
-      img {
-        width: 100%;
-      }
-    }
-    div {
-      width: 50%;
+  & > div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    :first-child {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      p:nth-child(2) {
-        margin-top: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      h2 {
+        color: #c1c1c1;
+        font-style: italic;
+        font-size: 1rem;
+        font-weight: normal;
       }
-      p {
-        font-size: 1.2rem;
+      i {
+        font-size: 2.5rem;
+        color: var(--color-orange);
+        cursor: pointer;
+        transition: all 300ms;
+        :hover {
+          color: var(--color-orange-2);
+        }
       }
     }
-  }
-  div:nth-child(3) {
-    text-align: end;
   }
 `;
