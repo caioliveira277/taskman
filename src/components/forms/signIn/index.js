@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import ButtonTheme from "../../buttons";
+import { ButtonTheme } from "../../buttons";
 import { Input } from "../../inputs";
 import Form from "./styles";
 
@@ -59,7 +59,7 @@ export default function LoginForm() {
           />
         </label>
       </div>
-      <ButtonTheme type="submit" text="Enviar" />
+      <ButtonTheme type="submit">Enviar</ButtonTheme>
     </Form>
   );
 }

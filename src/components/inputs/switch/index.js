@@ -5,8 +5,8 @@ import Switch from "./styles";
 /**
  * @description Switch Component
  *
- * @param   {String} [required]    checked color
- * @param   {String} [required]    text
+ * @param   {String} [String] [required]    checked color
+ * @param   {String} [String] [required]    text
  * @return {JSX} JSX
  *
  * @example

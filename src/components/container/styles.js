@@ -6,11 +6,11 @@ const Container = styled.section`
   position: fixed;
   display: flex;
   justify-content: center;
-  align-items: center;
   background: ${(props) => props.background};
   top: 0;
   left: 0;
   z-index: ${(props) => props.zindex};
+  overflow-y: auto;
 `;
 
 export default Container;

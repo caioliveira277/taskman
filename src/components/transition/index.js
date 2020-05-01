@@ -7,9 +7,9 @@ import Transition from "./styles";
 /**
  * @description TransitionPage component
  *
- * @param   {String} [required]    redirect after animation
- * @param   {String} [optional]    text during the transition
- * @param   {String} [optional]    mode = normal || accept: 'reverse'
+ * @param   {String} [String] [required]    redirect after animation
+ * @param   {String} [String] [optional]    text during the transition
+ * @param   {String} [String] [optional]    mode = normal || accept: 'reverse'
  * @return {JSX} JSX
  *
  * @example

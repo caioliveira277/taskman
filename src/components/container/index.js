@@ -7,9 +7,9 @@ import Container from "./styles";
  * @description Container Component
  * @summary rendered directly in the 'body'
  *
- * @param   {String} [optional]    background = "#00000055"
+ * @param   {String} [String] [optional]    background = "#00000055"
  * @param   {Number} [optional]    zindex: z-index property css
- * @param   {Function} [optional]  onclick = () => ()
+ * @param   {Function} [Function] [optional]  onclick = () => ()
  * @return {JSX} JSX
  *
  * @example

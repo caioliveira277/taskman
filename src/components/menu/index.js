@@ -1,52 +1,61 @@
-import React, { useRef, useState } from "react";
-import { FaPlus, FaMinus } from "react-icons/fa";
-import { Menu, Box } from "./styles";
+import React, { useRef } from "react";
+import { FaPlus } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { RiMenuAddLine } from "react-icons/ri";
+import { BsBookmarkPlus } from "react-icons/bs";
+import { ButtonRound } from "../buttons";
+import Group from "../group";
+import { Menu, Box, Content } from "./styles";
+import Modal from "../modal";
 
 export default function MenuComponent() {
   const box = useRef(null);
-  const [boxDisplay, setBoxDisplay] = useState(false);
-  let time;
+  const ModalDispatch = useDispatch();
+  const toggleModal = useSelector((state) => state.Toggle.modal);
 
   const HandlerActive = () => {
-    time = setTimeout(() => {
-      setBoxDisplay(true);
-      box.current.classList.add("active");
-    }, 150);
+    box.current.classList.toggle("active");
   };
-  const HandlerInactive = () => {
+  const HandlerModal = () => {
+    ModalDispatch({ type: "OPEN_MODAL" });
+  };
+  const HandlerOpenModal = () => {
     box.current.classList.remove("active");
-    clearInterval(time);
-  };
-  const HandlerDisplay = () => {
-    if (!box.current.classList.contains("active")) {
-      setBoxDisplay(false);
-    }
   };
   return (
-    <Menu onMouseEnter={HandlerActive} onMouseLeave={HandlerInactive} ref={box}>
-      {boxDisplay ? (
-        <Box onTransitionEnd={HandlerDisplay}>
+    <>
+      <Menu onMouseEnter={HandlerActive} onMouseLeave={HandlerActive} ref={box}>
+        <Box>
           <li>
-            <button type="button">
+            <ButtonRound type="button" name="group" onClick={HandlerModal}>
               <i>
-                <FaMinus />
+                <RiMenuAddLine />
               </i>
-            </button>
+            </ButtonRound>
           </li>
           <li>
-            <button type="button">
+            <ButtonRound type="button" name="tasks" onClick={HandlerModal}>
               <i>
-                <FaPlus />
+                <BsBookmarkPlus />
               </i>
-            </button>
+            </ButtonRound>
           </li>
         </Box>
+        <button type="button">
+          <i>
+            <FaPlus />
+          </i>
+        </button>
+      </Menu>
+      {toggleModal === "Open" ? (
+        <Modal title="Novo grupo:" onAnimationEnd={HandlerOpenModal}>
+          <Content>
+            <div>
+              <Group />
+            </div>
+          </Content>
+        </Modal>
       ) : null}
-      <button type="button">
-        <i>
-          <FaPlus />
-        </i>
-      </button>
-    </Menu>
+    </>
   );
 }

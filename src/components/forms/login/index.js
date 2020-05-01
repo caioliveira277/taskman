@@ -3,7 +3,7 @@ import { MdVpnKey, MdPerson } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import Form from "./styles";
 import { Input, Switch } from "../../inputs";
-import ButtonTheme from "../../buttons";
+import { ButtonTheme } from "../../buttons";
 import TransitionPage from "../../transition";
 
 export default function LoginForm() {
@@ -55,7 +55,7 @@ export default function LoginForm() {
             Esqueceu sua senha?
           </a>
         </span>
-        <ButtonTheme type="submit" text="Entrar" />
+        <ButtonTheme type="submit">Entrar</ButtonTheme>
       </Form>
       {transition === true ? (
         <TransitionPage redirect="/tasks" text="Tarefas" />

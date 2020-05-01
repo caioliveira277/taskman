@@ -7,9 +7,9 @@ import { Span, DropPicker } from "./styles";
 /**
  * @description ColorPicker Component
  *
- * @param   {String} [optional]    onChange = () => null, used to get the color
- * @param   {String} [optional]    name = ""
- * @param   {String} [optional]    colorDefault = "#2e2e2e"
+ * @param   {String} [String] [optional]    onChange = () => null, used to get the color
+ * @param   {String} [String] [optional]    name = ""
+ * @param   {String} [String] [optional]    colorDefault = "#2e2e2e"
  * @return {JSX} JSX
  *
  * @example

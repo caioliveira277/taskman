@@ -5,15 +5,15 @@ import Input from "./styles";
 /**
  * @description Input component
  *
- * @param   {String} [optional]    type = "text"
- * @param   {String} [optional]    placeholder = ""
- * @param   {String} [optional]    autocomplete = "on"
- * @param   {String} [optional]    width = "100%"
- * @param   {String} [optional]    height = "45px"
- * @param   {String} [optional]    margin = "0"
+ * @param   {String} [String] [optional]    type = "text"
+ * @param   {String} [String] [optional]    placeholder = ""
+ * @param   {String} [String] [optional]    autocomplete = "on"
+ * @param   {String} [String] [optional]    width = "100%"
+ * @param   {String} [String] [optional]    height = "45px"
+ * @param   {String} [String] [optional]    margin = "0"
  * @param   {Boolean} [optional]   required = false
- * @param   {Function} [optional]  onChange = () => null
- * @param   {String} [optional]    name = ""
+ * @param   {Function} [Function] [optional]  onChange = () => null
+ * @param   {String} [String] [optional]    name = ""
  * @return {JSX} JSX
  *
  * @example

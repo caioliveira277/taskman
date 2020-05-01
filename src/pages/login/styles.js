@@ -39,3 +39,19 @@ export const Figure = styled.figure`
     object-fit: cover;
   }
 `;
+
+export const FormForgotPass = styled.form`
+  & > :first-child {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    figure {
+      margin-right: 1.5rem;
+      flex-basis: 60%;
+    }
+  }
+  & > :last-child {
+    margin-bottom: 1rem;
+    text-align: end;
+  }
+`;

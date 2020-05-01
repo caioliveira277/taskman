@@ -44,11 +44,11 @@ export const FadeFormReset = keyframes`
 
 export const FadeModal = keyframes`
   from {
-    top: -10%;
+    transform: translateY(-50%);
     opacity: 0;
   }
   to {
-    top: 25%;
+    transform: translateY(15%);
     opacity: 1;
   }
 `;

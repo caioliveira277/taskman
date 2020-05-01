@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Menu = styled.div`
+  pointer-events: none;
   position: fixed;
   bottom: 70px;
   right: 70px;
@@ -8,6 +9,7 @@ export const Menu = styled.div`
   overflow: hidden;
   padding: 6px;
   &.active {
+    pointer-events: all;
     & > button {
       transform: rotate(45deg);
     }
@@ -17,6 +19,7 @@ export const Menu = styled.div`
     }
   }
   & > button {
+    pointer-events: all;
     border: none;
     width: 50px;
     height: 50px;
@@ -41,7 +44,7 @@ export const Box = styled.ul`
   background: #f5f5f5;
   margin-bottom: 20px;
   border-radius: 60px;
-  padding: 10px;
+  padding: 8px;
   box-shadow: 0px 5px 10px #00000055;
   display: flex;
   flex-direction: column;
@@ -49,22 +52,13 @@ export const Box = styled.ul`
   transition: all 150ms ease;
   li {
     text-align: center;
-    button {
-      width: 30px;
-      height: 30px;
-      border: none;
-      border-radius: 50%;
-      padding: 8px;
-      cursor: pointer;
-      i {
-        color: #ffffff;
-      }
-    }
-    :first-child button {
-      background: #d50000;
-    }
-    :last-child button {
-      background: #19b600;
-    }
+  }
+`;
+
+export const Content = styled.form`
+  & > :first-child {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
   }
 `;
