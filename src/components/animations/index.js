@@ -71,13 +71,7 @@ export const TransitionAnimReverse = keyframes`
 `;
 export const FadeDropdown = keyframes`
   0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-`;
-export const FadeDropPicker = keyframes`
-  0% {
-    transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%);
     opacity: 0;
   }
 `;
