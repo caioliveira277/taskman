@@ -15,7 +15,7 @@ const Button = styled.button`
     font-size: 24px;
   }
   :hover {
-    box-shadow: 0px 12px 12px #00000045;
+    box-shadow: 2px 9px 12px #00000045;
   }
   :active {
     box-shadow: 0px 5px 12px #00000045;
