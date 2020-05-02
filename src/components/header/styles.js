@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Header = styled.header`
+export const Header = styled.header`
   background: #2e2e2e;
   width: 100vw;
   height: 50px;
@@ -99,4 +99,13 @@ const Header = styled.header`
   }
 `;
 
-export default Header;
+export const HeaderDropdown = styled.figure`
+  background: var(--color-blue);
+  background: url("${process.env.PUBLIC_URL}/assets/images/background-dropdown.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 50px;
+  border-radius: 0.4rem 0.4rem 0 0;
+`;
