@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FadeNewGroup } from "../animations";
 
 const Group = styled.div`
   width: 300px;
@@ -6,6 +7,8 @@ const Group = styled.div`
   border-radius: 0.6rem;
   background: ${(props) => props.background};
   box-shadow: 0px 4px 15px 0px #00000050;
+  animation: ${(props) => !props.startAnimation || FadeNewGroup} 700ms
+    cubic-bezier(0.76, 0.77, 0.17, 1);
   & > hr {
     margin-bottom: 0 !important;
   }

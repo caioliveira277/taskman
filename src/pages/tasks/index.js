@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Main } from "./styles";
 import { NewGroup } from "../../components/forms";
 import Group from "../../components/group";
@@ -8,6 +8,15 @@ import Header from "../../components/header";
 import Menu from "../../components/menu";
 
 export default function Tasks() {
+  const [newGroup, setNewGroup] = useState([]);
+  const [key, setKey] = useState(0);
+  const AddNewGroup = () => {
+    setKey(key + 1);
+    setNewGroup([
+      ...newGroup,
+      <Group title="Título" startAnimation key={key} />,
+    ]);
+  };
   return (
     <>
       <Main>
@@ -58,7 +67,8 @@ export default function Tasks() {
               <Task />
             </>
           </Group>
-          <NewGroup />
+          {newGroup}
+          <NewGroup onClick={AddNewGroup} />
         </section>
         <Menu />
       </Main>

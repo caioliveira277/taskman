@@ -5,7 +5,12 @@ import { ColorPicker } from "../inputs";
 import { ButtonRound } from "../buttons";
 import Group from "./styles";
 
-export default function GroupComponent({ title, children, backgroundColor }) {
+export default function GroupComponent({
+  title,
+  children,
+  backgroundColor,
+  startAnimation,
+}) {
   const [newTitle, setNewTitle] = useState(title);
   const [editMode, setEditMode] = useState(false);
   const [groupBackground, setGroupBackground] = useState(backgroundColor);
@@ -21,7 +26,7 @@ export default function GroupComponent({ title, children, backgroundColor }) {
     }
   };
   return (
-    <Group background={groupBackground}>
+    <Group background={groupBackground} startAnimation={startAnimation}>
       <div>
         {" # "}
         <input
@@ -60,8 +65,10 @@ GroupComponent.propTypes = {
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string,
+  startAnimation: PropTypes.bool,
 };
 GroupComponent.defaultProps = {
   children: "",
   backgroundColor: "#AFAFAF",
+  startAnimation: false,
 };
