@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Redirect,
   Switch,
@@ -37,7 +37,7 @@ export default function Routes() {
     <Provider store={Store}>
       <Router>
         <Switch>
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/" component={Login} />
           <PrivateRoute exact path="/tasks" component={Tasks} />
           <PrivateRoute exact path="/profile" component={Profile} />
         </Switch>
