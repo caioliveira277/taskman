@@ -44,11 +44,11 @@ export const FadeFormReset = keyframes`
 
 export const FadeModal = keyframes`
   from {
-    top: -10%;
+    transform: translateY(-50%);
     opacity: 0;
   }
   to {
-    top: 25%;
+    transform: translateY(15%);
     opacity: 1;
   }
 `;
@@ -71,13 +71,7 @@ export const TransitionAnimReverse = keyframes`
 `;
 export const FadeDropdown = keyframes`
   0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-`;
-export const FadeDropPicker = keyframes`
-  0% {
-    transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%);
     opacity: 0;
   }
 `;
@@ -94,5 +88,15 @@ export const FadeAside = keyframes`
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+`;
+export const FadeNewGroup = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 `;

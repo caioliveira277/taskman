@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import Container from "../../container";
 import { Input, ColorPicker, TextArea } from "../../inputs";
-import Button from "../../buttons";
+import { ButtonTheme } from "../../buttons";
 import { Aside, Preview, Group } from "./styles";
 
 export default function AsideComponent() {
@@ -84,7 +84,7 @@ export default function AsideComponent() {
               onChange={HandlerChange}
             />
           </Group>
-          <Button type="submit" text="Salvar" />
+          <ButtonTheme type="submit">Salvar</ButtonTheme>
         </form>
       </Aside>
     </Container>

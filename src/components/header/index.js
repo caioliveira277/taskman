@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Aside from "./aside";
 import Nav from "./nav";
 import Dropdown from "../dropdown";
-import Header from "./styles";
+import { Header, HeaderDropdown } from "./styles";
 
 export default function HeaderComponent() {
   const [dropdown, setDropdown] = useState(false);
@@ -51,21 +51,21 @@ export default function HeaderComponent() {
         <h2>User </h2>
         <i>&#9662;</i>
         {dropdown === true ? (
-          <Dropdown
-            image={`${process.env.PUBLIC_URL}/assets/images/background-dropdown.jpg`}
-          >
-            <ul>
-              <li>
-                <Link to="/profile">Perfil</Link>
-              </li>
-              <li>
-                <Link to="/profile">Ajustes</Link>
-              </li>
-              <hr />
-              <li>
-                <Link to="/profile">Sair</Link>
-              </li>
-            </ul>
+          <Dropdown header={<HeaderDropdown />}>
+            <div>
+              <ul>
+                <li>
+                  <Link to="/profile">Perfil</Link>
+                </li>
+                <li>
+                  <Link to="/profile">Ajustes</Link>
+                </li>
+                <hr />
+                <li>
+                  <Link to="/profile">Sair</Link>
+                </li>
+              </ul>
+            </div>
           </Dropdown>
         ) : null}
       </div>

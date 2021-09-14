@@ -5,15 +5,15 @@ import TextArea from "./styles";
 /**
  * @description Textarea component
  *
- * @param   {String} [optional]    placeholder = ""
- * @param   {String} [optional]    width = "100%"
- * @param   {String} [optional]    height = "45px"
- * @param   {String} [optional]    margin = "0"
+ * @param   {String} [String] [optional]    placeholder = ""
+ * @param   {String} [String] [optional]    width = "100%"
+ * @param   {String} [String] [optional]    height = "45px"
+ * @param   {String} [String] [optional]    margin = "0"
  * @param   {Number} [optional]    rows = 1
  * @param   {Number} [optional]    cols = 1
  * @param   {Boolean} [optional]   required = false
- * @param   {Function} [optional]  onChange = () => null
- * @param   {String} [optional]    name = ""
+ * @param   {Function} [Function] [optional]  onChange = () => null
+ * @param   {String} [String] [optional]    name = ""
  * @return {JSX} JSX
  *
  * @example

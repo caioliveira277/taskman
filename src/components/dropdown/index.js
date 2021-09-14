@@ -2,15 +2,23 @@ import React from "react";
 import PropTypes from "prop-types";
 import Span from "./styles";
 
-export default function Dropdown({ image, children }) {
+export default function Dropdown({ children, header, closeClick }) {
+  const HandlerClick = (event) => {
+    event.stopPropagation();
+  };
   return (
-    <Span background={image}>
-      <figure />
-      <div>{children}</div>
+    <Span onClick={!closeClick ? HandlerClick : null}>
+      {header}
+      {children}
     </Span>
   );
 }
 Dropdown.propTypes = {
-  image: PropTypes.string.isRequired,
-  // children: PropTypes.isRequired
+  header: PropTypes.PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+    .isRequired,
+  children: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  closeClick: PropTypes.bool,
+};
+Dropdown.defaultProps = {
+  closeClick: true,
 };

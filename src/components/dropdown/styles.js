@@ -2,14 +2,16 @@ import styled from "styled-components";
 import { FadeDropdown } from "../animations";
 
 const Span = styled.span`
-  width: 180px;
+  width: auto;
+  min-width: 180px;
   background: #ffffff;
   border-radius: 0.4rem;
   position: absolute;
-  top: 150%;
-  right: 10px;
+  top: 157%;
+  right: -10px;
   box-shadow: 0px 5px 10px #00000065;
   animation: ${FadeDropdown} 400ms ease;
+  z-index: 10;
   ::before {
     content: "";
     display: block;
@@ -21,18 +23,9 @@ const Span = styled.span`
     border-radius: 0.3rem;
     top: -8px;
     right: 20px;
+    z-index: 9;
   }
-  figure {
-    background: var(--color-blue);
-    background: url(${(props) => props.background});
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    height: 50px;
-    border-radius: 0.4rem 0.4rem 0 0;
-  }
-  div {
+  & > div:last-child {
     padding: 0.5rem;
   }
 `;

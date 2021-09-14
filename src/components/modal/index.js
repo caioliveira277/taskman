@@ -1,13 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import Lottie from "react-lottie";
+import PropTypes from "prop-types";
 import { ModalContent } from "./styles";
 import Container from "../container";
-import ButtonTheme from "../buttons";
-import { Input } from "../inputs";
-import animation from "../animations/lottie/worked.json";
 
-export default function Modal() {
+export default function Modal({ title, children, onAnimationEnd }) {
   const ModalDispatch = useDispatch();
 
   const ToggleModal = (event) => {
@@ -15,10 +12,10 @@ export default function Modal() {
     ModalDispatch({ type: "CLOSE_MODAL" });
   };
   return (
-    <Container>
-      <ModalContent>
+    <Container zindex={10}>
+      <ModalContent onAnimationEnd={onAnimationEnd}>
         <div>
-          <h2>Recuperação de senha:</h2>
+          <h2>{title}</h2>
           <i
             onClick={ToggleModal}
             tabIndex={0}
@@ -27,37 +24,20 @@ export default function Modal() {
           >
             &times;
           </i>
-          <hr />
         </div>
-        <div>
-          <figure>
-            <Lottie
-              options={{
-                animationData: animation,
-              }}
-            />
-          </figure>
-          <div>
-            <p>Fique tranquilo!</p>
-            <p>
-              Informe o seu
-              <b> email registrado</b>
-              {" e te ajudaremos com isso! "}
-            </p>
-            <Input
-              type="email"
-              name="email"
-              required
-              placeholder="Email"
-              margin="10px 0"
-            />
-          </div>
-        </div>
-        <div>
-          <hr />
-          <ButtonTheme type="submit" text="Enviar" />
-        </div>
+        <hr />
+        <div>{children}</div>
       </ModalContent>
     </Container>
   );
 }
+
+Modal.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+    .isRequired,
+  onAnimationEnd: PropTypes.func,
+};
+Modal.defaultProps = {
+  onAnimationEnd: () => null,
+};
